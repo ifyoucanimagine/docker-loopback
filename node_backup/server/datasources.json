@@ -1,0 +1,6 @@
+{
+  "towdb": {
+    "name": "towdb",
+    "connector": "mongodb"
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "name": "release",
+  "base": "publishableItem",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {},
+  "validations": [],
+  "relations": {
+    "recordings": {
+      "type": "embedsMany",
+      "model": "recording",
+      "property": "recordings",
+      "options": {
+        "validate": true,
+        "forceId": false
+      }
+    }
+  },
+  "acls": [],
+  "methods": {}
+}
