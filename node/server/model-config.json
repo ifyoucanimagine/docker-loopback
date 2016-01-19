@@ -61,5 +61,9 @@
   "image": {
     "dataSource": "towdb",
     "public": true
+  },
+  "Meta": {
+    "dataSource": "towdb",
+    "public": true
   }
 }
