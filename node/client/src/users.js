@@ -4,14 +4,14 @@ import 'fetch';
 
 @inject(HttpClient)
 export class Users {
-  heading = 'Github Users';
+  heading = 'Users';
   users = [];
 
   constructor(http) {
     http.configure(config => {
       config
         .useStandardConfiguration()
-        .withBaseUrl('https://api.github.com/');
+        .withBaseUrl('/api/images');
     });
 
     this.http = http;
