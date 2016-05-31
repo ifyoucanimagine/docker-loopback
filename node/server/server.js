@@ -26,14 +26,7 @@ var bodyParser = require('body-parser');
  */
 var flash      = require('express-flash');
 
-// attempt to build the providers/passport config
-var config = {};
-try {
-  config = require('../providers.json');
-} catch (err) {
-  console.trace(err);
-  process.exit(1); // fatal
-}
+
 
 // -- Add your pre-processing middleware here --
 
@@ -56,18 +49,27 @@ app.middleware('parse', bodyParser.urlencoded({
 app.middleware('auth', loopback.token({
   model: app.models.accessToken
 }));
-
+console.info("Access Token: ", app.models.accessToken);
 app.middleware('session:before', loopback.cookieParser(app.get('cookieSecret')));
 app.middleware('session', loopback.session({
-  secret: 'kitty',
+  secret: 'Shiba Inu',
   saveUninitialized: true,
   resave: true
 }));
-passportConfigurator.init();
 
 // We need flash messages to see passport errors
 app.use(flash());
 
+// attempt to build the providers/passport config
+var config = {};
+try {
+  config = require('../providers.json');
+} catch (err) {
+  console.trace(err);
+  process.exit(1); // fatal
+}
+
+passportConfigurator.init();
 passportConfigurator.setupModels({
   userModel: app.models.user,
   userIdentityModel: app.models.userIdentity,
@@ -79,6 +81,7 @@ for (var s in config) {
   passportConfigurator.configureProvider(s, c);
 }
 var ensureLoggedIn = require('connect-ensure-login').ensureLoggedIn;
+
 
 app.start = function() {
   // start the web server
