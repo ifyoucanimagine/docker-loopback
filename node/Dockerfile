@@ -1,5 +1,5 @@
 # Set the base image to Ubuntu
-FROM node:5
+FROM node
 
 # File Author / Maintainer
 MAINTAINER Stuart Flanagan

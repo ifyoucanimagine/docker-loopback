@@ -33,33 +33,5 @@
   "Role": {
     "dataSource": "db",
     "public": false
-  },
-  "publishableItem": {
-    "dataSource": "db",
-    "public": false
-  },
-  "post": {
-    "dataSource": "db",
-    "public": true
-  },
-  "recording": {
-    "dataSource": "db",
-    "public": true
-  },
-  "release": {
-    "dataSource": "db",
-    "public": true
-  },
-  "media": {
-    "dataSource": "db",
-    "public": true
-  },
-  "video": {
-    "dataSource": "db",
-    "public": true
-  },
-  "image": {
-    "dataSource": "db",
-    "public": true
   }
 }

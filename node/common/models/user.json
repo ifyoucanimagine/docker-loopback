@@ -2,8 +2,6 @@
   "name": "user",
   "plural": "users",
   "base": "User",
-  "properties": {},
-  "validations": [],
   "relations": {
     "accessTokens": {
       "type": "hasMany",
@@ -21,6 +19,7 @@
       "foreignKey": "userId"
     }
   },
+  "validations": [],
   "acls": [],
-  "methods": {}
+  "methods": []
 }
